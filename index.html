@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="app.js"></script>
+    <title>Colorize WORDLE</title>
+</head>
+<body onload="init()">
+    <form onsubmit="colorize(event)">
+        <p>
+            Paste wordle<br />
+            <textarea id="wordle" name="wordle" rows="8" required></textarea>
+        </p>
+        <p>
+            <label for="🟩">In the word, correct spot</label>
+            <select name="🟩" id="🟩">
+                <option value="🟥">🟥</option>
+                <option value="🟧">🟧</option>
+                <option value="🟨">🟨</option>
+                <option value="🟩">🟩</option>
+                <option selected value="🟦">🟦</option>
+                <option value="🟪">🟪</option>
+                <option value="⬛">⬛</option>
+                <option value="⬜">⬜</option>
+                <option value="🟫">🟫</option>
+            </select>
+        </p>
+        <p>
+            <label for="🟨">In the word, wrong spot</label>
+            <select name="🟨" id="🟨">
+                <option value="🟥">🟥</option>
+                <option selected value="🟧">🟧</option>
+                <option value="🟨">🟨</option>
+                <option value="🟩">🟩</option>
+                <option value="🟦">🟦</option>
+                <option value="🟪">🟪</option>
+                <option value="⬛">⬛</option>
+                <option value="⬜">⬜</option>
+                <option value="🟫">🟫</option>
+            </select>
+        </p>
+        <p>
+            <label for="⬛">Not in the word</label>
+            <select name="⬛" id="⬛">
+                <option value="🟥">🟥</option>
+                <option value="🟧">🟧</option>
+                <option value="🟨">🟨</option>
+                <option value="🟩">🟩</option>
+                <option value="🟦">🟦</option>
+                <option value="🟪">🟪</option>
+                <option selected value="⬛">⬛</option>
+                <option value="⬜">⬜</option>
+                <option value="🟫">🟫</option>
+            </select>
+        </p>
+        <div>
+            <button>Colorize</button>
+        </div>
+    </form>
+    <p><textarea name="wordle" rows="8" id="colorizedWordle"></textarea></p>
+    <p><button id="copy">Copy</button></p>
+</body>
+</html>
+
