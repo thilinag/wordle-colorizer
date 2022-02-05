@@ -12,6 +12,7 @@ const colorize = event => {
     const wordleShareParts = wordle.replaceAll('\r', '').split('\n\n')
     const wordleText = wordleShareParts[0]
     const solutionRows = wordleShareParts[1].split('\n').map(r => [...r])
+    const concealStartingWord = formData.get('conceal_starting_word')
 
     // create a placeholder array
     const colorizedWordleMatrix = Array.from(Array(solutionRows.length), () => new Array(5).fill(0))
@@ -21,6 +22,10 @@ const colorize = event => {
             // replace placeholder with the new color
             colorizedWordleMatrix[i][j] = formData.get(solutionRows[i][j])
         }
+    }
+
+    if (concealStartingWord) {
+        colorizedWordleMatrix[0] = colorizedWordleMatrix[0].map(c => '🈲')
     }
 
     // re-create share string
