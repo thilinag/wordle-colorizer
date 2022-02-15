@@ -6,6 +6,10 @@ const colorize = event => {
 
     // support light mode
     formData.set('⬜', formData.get('⬛'))
+
+    // support high contrast
+    formData.set('🟧', formData.get('🟩'))
+    formData.set('🟦', formData.get('🟨'))
     
     // separate emoji and text
     const wordle = formData.get('wordle')
