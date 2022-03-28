@@ -53,11 +53,6 @@ const init = () => {
         e.target.select()
         document.execCommand('copy')
     }
-    
-    // select original wordle text on click
-    document.getElementById('wordle').onclick = e => {
-        e.target.select()
-    }
 
     // copy colorized string on button click
     document.getElementById('copy').onclick = e => {
@@ -68,4 +63,9 @@ const init = () => {
             e.target.textContent = 'copy'
         }, 1000)
     }
+
+    // select original wordle text on click
+    const wordleTextbox = document.getElementById('wordle')
+    wordleTextbox.focus()
+    wordleTextbox.select()
 }
